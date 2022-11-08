@@ -1,0 +1,32 @@
+//Create a grocery store ledger
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, aisle INTEGER, stock INTEGER);
+
+INSERT INTO store VALUES (1, 'steak', 16.07, 7, 44);
+INSERT INTO store VALUES (2, 'chicken', 11.41, 9, 75);
+INSERT INTO store VALUES (3, 'beef broth', 3.49, 10, 93);
+INSERT INTO store VALUES (4, 'dijon mustard', 6.28, 14, 62);
+INSERT INTO store VALUES (5, 'eggs', 3.09, 2, 59);
+INSERT INTO store VALUES (6, 'bread', 2.99, 1, 38);
+INSERT INTO store VALUES (7, 'milk', 3.49, 5, 88);
+INSERT INTO store VALUES (8, 'asparagus', 6.78, 17, 19);
+INSERT INTO store VALUES (9, 'bell peppers', 4.31, 17, 46);
+INSERT INTO store VALUES (10, 'pineapple', 7.66, 18, 13);
+INSERT INTO store VALUES (11, 'blueberries', 6.24, 18, 7);
+INSERT INTO store VALUES (12, 'butter', 5.18, 2, 17);
+INSERT INTO store VALUES (13, 'sharp cheddar', 7.38, 2, 21);
+
+//display items in store and ordered by price
+SELECT * 
+FROM store
+ORDER BY price;
+
+//what is the avg of items in stock below 20?
+SELECT SUM(stock) 
+FROM store 
+WHERE stock <20;
+
+//what is the avg price of items in aisle 2?
+SELECT AVG(price) 
+FROM store 
+WHERE aisle=2;
